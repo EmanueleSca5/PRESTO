@@ -1,0 +1,16 @@
+/* font-family: "Orbitron", sans-serif;
+ font-family: "Lato", sans-serif; */
+
+:root{
+    --yl : rgb(206, 206, 20);
+    --bk : rgb(23, 23, 23);
+    --wh : rgb(244, 242, 242);
+}
+
+h1, h2, h3, h4, .h1, .h2, .h3, .h4{
+    font-family: "Orbitron", sans-serif;
+}
+
+p{
+     font-family: "Lato", sans-serif;
+}
