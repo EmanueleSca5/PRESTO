@@ -1,0 +1,84 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+:root{
+    --yl : rgb(238, 184, 5);
+    --bk : rgb(23, 23, 23);
+    --wh : rgb(244, 242, 242);
+}
+
+h1, h2, h3, h4, .h1, .h2, .h3, .h4{
+    font-family: "Orbitron", sans-serif;
+    
+}
+
+p{
+     font-family: "Lato", sans-serif;
+}
+
+.bg-black{
+    background-color: var(--bk);
+}
+
+.bg-white{
+    background-color: var(--wh);
+}
+
+.bg-yellow{
+    background-color: var(--yl);
+}
+
+.text-wh{
+    color: var(--wh);
+}
+
+.text-bk{
+    color: var(--bk);
+}
+
+.text-yl{
+    color: var(--yl);
+}
+
+body{
+    background-color: var(--bk);
+}
+
+/* NAVBAR */
+.navbar{
+   position: fixed; 
+   height: 140px;
+   width: 100%;
+   top: 0;
+   transition: 0.5s;
+   z-index: 999;
+}
+
+.navbar-collapse{
+    transition: 0.5s;
+    max-height: 130px;
+   
+}
+
+.container-fluid{
+    padding: 0px;
+}
+
+.nav-link{
+ 
+    font-size: large;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.nav-link:hover{
+    color: var(--wh);
+    text-shadow: 4px 4px 4px var(--yl);
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+}

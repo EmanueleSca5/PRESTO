@@ -1,0 +1,62 @@
+[
+    {
+        "id" : 1,
+        "prodotto" : "Playstation",
+        "price" : "550",
+        "category" : "console"
+    },
+    {
+        "id" : 2,
+        "prodotto" : "Xbox",
+        "price" : "450",
+        "category" : "console"
+    },
+    {
+        "id" : 3,
+        "prodotto" : "Switch",
+        "price" : "350",
+        "category" : "console"
+    },
+    {
+        "id" : 4,
+        "prodotto" : "Nintendo DS",
+        "price" : "200",
+        "category" : "console"
+    },
+    {
+        "id" : 5,
+        "prodotto" : "Call of duty",
+        "price" : "79.99",
+        "category" : "gioco"
+    },
+    {
+        "id" : 6,
+        "prodotto" : "GTA",
+        "price" : "69.99",
+        "category" : "gioco"
+    },
+    {
+        "id" : 7,
+        "prodotto" : "Fifa 26",
+        "price" : "59.99",
+        "category" : "gioco"
+    },
+    {
+        "id" : 8,
+        "prodotto" : "Caricaore",
+        "price" : "30",
+        "category" : "accessori"
+    },
+    {
+        "id" : 9,
+        "prodotto" : "Controller",
+        "price" : "80",
+        "category" : "accessori"
+    },
+    {
+        "id" : 10,
+        "prodotto" : "Controller white",
+        "price" : "80",
+        "category" : "accessori"
+    }
+]
