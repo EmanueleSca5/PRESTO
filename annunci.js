@@ -114,27 +114,33 @@ fetch("./annunci.json").then((response)=> response.json()).then((data)=>{
             })
         }
     showCards(data)
+
+    let radiobuttons = document.querySelectorAll(".form-check-input");
+
     
-    function filterByCategory(categoria){
+    function filterByCategory(array){
         // in questa funzione ho bisogno di ottnere un nuovo array partendo da data e gli elementi del nuovo array dovranno soddisfare kla condizione per la quale la loro category sia uguale alla categoria che stiamo passando alla funzione
+
+        // la categoria voglio trovarla partendo dalla lista di tutti i bottoni e usare il metodo .find() degli array su questa lista. la condizione da utilizzare è il bottone con l attributo checked
+        let categoria = Array.from(radiobuttons).find((button)=> button.checked ).id;
+        console.log(categoria);
+        
+
         if(categoria != "All"){
 
-            let filtered = data.filter((annuncio)=> annuncio.category == categoria)
-            showCards(filtered)
+            let filtered = array.filter((annuncio)=> annuncio.category == categoria)
+            return filtered
         }else{
-            showCards(data)
+            return array
         }
         
     }
     
 
-    let radiobuttons = document.querySelectorAll(".form-check-input")
-
 
     radiobuttons.forEach((button)=>{
         button.addEventListener("click", ()=>{
-            filterByCategory(button.id)
-            
+        globalFilter();            
         })
     })
 
@@ -157,24 +163,37 @@ fetch("./annunci.json").then((response)=> response.json()).then((data)=>{
     }
     setPriceInput()
 
-    function filterByPrice(){
-        let filtered = data.filter((dato)=> +dato.price <= priceInput.value);
-        showCards(filtered)
-        
+    function filterByPrice(array){
+        let filtered = array.filter((dato)=> +dato.price <= priceInput.value);
+        return filtered;
     }
+
     priceInput.addEventListener("input", ()=>{
-        filterByPrice()
+        globalFilter()
         prezzo.innerHTML = priceInput.value
     })
 
     let wordInput = document.querySelector("#wordInput")
-    function filterByWord(parola){
-        let filtered = data.filter((dato)=> dato.prodotto.toLowerCase().includes(parola.toLowerCase()))
-        showCards(filtered)
+    function filterByWord(array){
+        let filtered = array.filter((dato)=> dato.prodotto.toLowerCase().includes( wordInput.value.toLowerCase()))
+        return filtered;
     }
      
     wordInput.addEventListener("input", ()=>{
-        filterByWord(wordInput.value)
+    globalFilter()
+
     })
+
+    // quello di cui abbiamo bisogno è che ad ogni evento scattino tutte e 3 le funzioni di filtro ma non che siano applicate tutte e tre sull array data, bensi siano concatenate ed ognuna filtri il risultato della funzione di filtro precedente
+
+    function globalFilter(){
+        let byCategory = filterByCategory(data);
+        let byPrice = filterByPrice(byCategory); 
+        let byWord = filterByWord(byPrice);
+
+        showCards(byWord)
+    }
+    globalFilter()
 })
 
+// MOCKAROO Random generator json
