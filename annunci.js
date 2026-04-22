@@ -104,7 +104,7 @@ fetch("./annunci.json").then((response)=> response.json()).then((data)=>{
                 div.classList.add("card-cst")
                 div.innerHTML = `
                         <img src="https://picsum.photos/200/${300 + i}"
-                        <p class="h2" title="${dato.prodotto}">${dato.prodotto}</p>
+                        <p class="h2" title="${dato.name}">${dato.name}</p>
                         <p class="h5 text-start">${dato.category} </p>
                         <p class="h4">Desc prod</p>
                         <p class="h5"> ${dato.price}$</p>
@@ -175,10 +175,10 @@ fetch("./annunci.json").then((response)=> response.json()).then((data)=>{
 
     let wordInput = document.querySelector("#wordInput")
     function filterByWord(array){
-        let filtered = array.filter((dato)=> dato.prodotto.toLowerCase().includes( wordInput.value.toLowerCase()))
+        let filtered = array.filter((dato)=> dato.name.toLowerCase().includes( wordInput.value.toLowerCase()))
         return filtered;
     }
-     
+      
     wordInput.addEventListener("input", ()=>{
     globalFilter()
 
